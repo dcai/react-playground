@@ -35,3 +35,6 @@ jobs:
 
       - name: Deploy static site to S3 bucket
         run: aws s3 sync ./dist/ s3://github-react-playground-website --delete
+
+      - name: Invalidate couldfront
+        run: aws cloudfront create-invalidation --distribution-id E3NEIIPTJK1R5M --paths '/*'
