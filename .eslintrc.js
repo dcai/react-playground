@@ -23,7 +23,6 @@ module.exports = {
       rules: {
         'no-unused-vars': 'warn',
         'global-require': 'off',
-        'jsx-a11y/label-has-for': 'off',
       },
     },
   ],

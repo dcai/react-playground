@@ -4,7 +4,7 @@ import { Home } from './Home';
 
 let App = document.getElementById('app');
 
-ReactDOM.render(<Home name="dcai" />, App);
+ReactDOM.render(<Home />, App);
 
 // enable hot module replacement
 if (module.hot) {
