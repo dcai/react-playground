@@ -1,14 +1,14 @@
 module.exports = {
   root: true,
-  extends: ['@friendlyrobot/eslint-config'],
+  parser: '@babel/eslint-parser',
+  env: {
+    browser: true,
+    amd: true,
+    node: true,
+  },
   rules: {
     'consistent-return': 'warn',
-    'import/extensions': 'off',
-    'import/no-unresolved': 'warn',
     'no-plusplus': 'warn',
-    'react/forbid-prop-types': 'warn',
-    'react/jsx-filename-extension': 'warn',
-    'react/prefer-stateless-function': 'warn',
   },
   settings: {
     'import/resolver': {

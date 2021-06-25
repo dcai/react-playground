@@ -2,16 +2,12 @@ import React from 'react';
 
 const Header = () => (
   <header>
-    <nav
-      className="navbar is-dark"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div className="navbar-brand">
-        <a className="navbar-item" href="/">
-          React Playground :)
-        </a>
-      </div>
+    <nav role="navigation" aria-label="main navigation">
+      <ul>
+        <li>
+          <a href="/">React Playground :)</a>
+        </li>
+      </ul>
     </nav>
   </header>
 );
