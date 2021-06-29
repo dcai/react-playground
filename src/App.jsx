@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bulma/css/bulma.min';
 import { Home } from './Home';
 
 let App = document.getElementById('app');

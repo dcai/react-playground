@@ -1,10 +1,19 @@
 module.exports = {
   root: true,
   parser: '@babel/eslint-parser',
+  parserOptions: {
+    sourceType: 'module',
+    requireConfigFile: false,
+    babelOptions: {
+      presets: ['@babel/preset-react'],
+    },
+  },
   env: {
-    browser: true,
-    amd: true,
+    commonjs: true,
+    jest: true,
+    es6: true,
     node: true,
+    browser: true,
   },
   rules: {
     'consistent-return': 'warn',
