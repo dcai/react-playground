@@ -38,7 +38,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: react-app
-          path: dist
+          path: build
 
   deploy:
     needs: build
@@ -60,7 +60,7 @@ jobs:
         run: aws s3 sync ./ s3://${{ secrets.S3_BUCKET }} --delete
 
       - name: Enable s3 website hosting
-        run: aws s3 website s3://${{ secrets.S3_BUCKET }} --index-document index.html --error-document error.html
+        run: aws s3 website s3://${{ secrets.S3_BUCKET }} --index-document index.html --error-document index.html
 
       - name: Invalidate couldfront
-        run: aws cloudfront create-invalidation --distribution-id E3NEIIPTJK1R5M --paths '/*'
+        run: aws cloudfront create-invalidation --distribution-id ${{ CF_DIST_ID }} --paths '/*'

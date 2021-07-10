@@ -7,10 +7,18 @@ const NavbarItem = props => {
     'navbar-item': true,
     'is-active': props.active,
   });
-  return <a className={classes}>{props.children}</a>;
+  return (
+    <a href={props.href || '/'} className={classes}>
+      {props.children}
+    </a>
+  );
 };
 
-const NavbarLink = props => <a className="navbar-link">{props.children}</a>;
+const NavbarLink = props => (
+  <a href={props.href} className="navbar-link">
+    {props.children}
+  </a>
+);
 
 const NavbarBurger = props => (
   <span className="navbar-burger burger" data-target={props.dataTarget}>
@@ -21,7 +29,7 @@ const NavbarBurger = props => (
 );
 const NavbarBrand = props => (
   <div className="navbar-brand">
-    <NavbarItem href="#">
+    <NavbarItem href={props.href}>
       <span>🎲 React 🎲</span>
       <NavbarBurger />
     </NavbarItem>
@@ -34,13 +42,10 @@ const NavbarMenu = props => (
     <div className="navbar-end">
       <NavbarItem active>Home</NavbarItem>
       <NavbarItem>Examples</NavbarItem>
-      <NavbarItem>Features</NavbarItem>
-      <NavbarItem>Team</NavbarItem>
       <div className="navbar-item has-dropdown is-hoverable">
-        <NavbarLink>Account</NavbarLink>
+        <NavbarLink href="/">Account</NavbarLink>
         <div className="navbar-dropdown">
           <NavbarItem>Dashboard</NavbarItem>
-          <NavbarItem>Profile</NavbarItem>
           <NavbarItem>Settings</NavbarItem>
           <hr className="navbar-divider" />
           <NavbarItem>Logout</NavbarItem>
@@ -53,7 +58,7 @@ const NavbarMenu = props => (
 export const Navbar = () => (
   <nav className="navbar is-dark">
     <Container>
-      <NavbarBrand />
+      <NavbarBrand href="/" />
       <NavbarMenu />
     </Container>
   </nav>
