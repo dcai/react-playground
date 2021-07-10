@@ -9,10 +9,10 @@ import {
 } from '../components';
 
 const Hero = props => {
-  const typeclass = `is-${props.type || 'link'}`;
+  const typeclass = `is-${props.type || 'info'}`;
   return (
     <section className={`hero is-fullheight ${typeclass}`}>
-      <div className="hero-head">{props.header}</div>
+      {props.header && <div className="hero-head">{props.header}</div>}
       <div className="hero-body">{props.children}</div>
       <div className="hero-foot">{props.footer}</div>
     </section>
@@ -34,7 +34,8 @@ egestas elit vel sagittis finibus.`;
 
 export const Home = () => (
   <>
-    <Hero header={<Header />} footer={<Footer />}>
+    <Header />
+    <Hero footer={<Footer />}>
       <Container>
         <Row cols={8}>
           <Col sizeclassName="is-two-thirds">

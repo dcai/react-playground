@@ -2,10 +2,8 @@ import React from 'react';
 
 export const Footer = props => (
   <footer className="footer">
-    <div className="content has-text-centered">
-      <p>
-        <strong>React Playground</strong>. The source code is licensed BSD.
-      </p>
-    </div>
+    <p className="content has-text-centered has-text-dark">
+      <strong>React Playground</strong>. The source code is licensed BSD.
+    </p>
   </footer>
 );

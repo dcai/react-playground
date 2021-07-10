@@ -44,7 +44,7 @@ const NavbarMenu = props => (
       <NavbarItem>Examples</NavbarItem>
       <div className="navbar-item has-dropdown is-hoverable">
         <NavbarLink href="/">Account</NavbarLink>
-        <div className="navbar-dropdown">
+        <div className="navbar-dropdown is-dark">
           <NavbarItem>Dashboard</NavbarItem>
           <NavbarItem>Settings</NavbarItem>
           <hr className="navbar-divider" />
@@ -56,7 +56,7 @@ const NavbarMenu = props => (
 );
 
 export const Navbar = () => (
-  <nav className="navbar is-dark">
+  <nav className="navbar is-info">
     <Container>
       <NavbarBrand href="/" />
       <NavbarMenu />
