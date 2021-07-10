@@ -5,6 +5,7 @@ import { counterActions, selectCount } from '../redux';
 export const Counter = props => {
   const dispatch = useDispatch();
   const counter = useSelector(selectCount);
+  const href = '###';
 
   return (
     <>
@@ -21,21 +22,21 @@ export const Counter = props => {
         </div>
         <footer className="card-footer">
           <a
-            href
+            href={href}
             className="card-footer-item"
             onClick={() => dispatch(counterActions.increment())}
           >
             +
           </a>
           <a
-            href
+            href={href}
             className="card-footer-item"
             onClick={() => dispatch(counterActions.reset())}
           >
             reset
           </a>
           <a
-            href
+            href={href}
             className="card-footer-item"
             onClick={() => dispatch(counterActions.decrement())}
           >

@@ -12,9 +12,9 @@ const Hero = props => {
   const typeclass = `is-${props.type || 'link'}`;
   return (
     <section className={`hero is-fullheight ${typeclass}`}>
-      <div class="hero-head">{props.header}</div>
+      <div className="hero-head">{props.header}</div>
       <div className="hero-body">{props.children}</div>
-      <div class="hero-foot">{props.footer}</div>
+      <div className="hero-foot">{props.footer}</div>
     </section>
   );
 };
@@ -37,11 +37,11 @@ export const Home = () => (
     <Hero header={<Header />} footer={<Footer />}>
       <Container>
         <Row cols={8}>
-          <Col sizeClass="is-two-thirds">
+          <Col sizeclassName="is-two-thirds">
             <h1 className="title is-1">Contact Us</h1>
             <p className="is-size-4">{text}</p>
           </Col>
-          <Col sizeClass="is-one-thirds">
+          <Col sizeclassName="is-one-thirds">
             <ContactForm />
             <hr />
             <Counter />
