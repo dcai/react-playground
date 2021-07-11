@@ -27,7 +27,6 @@ egestas elit vel sagittis finibus.`;
 export const Home = () => (
   <>
     <Hero>
-      }>
       <Container>
         <Row cols={8}>
           <Col sizeclassName="is-two-thirds">
