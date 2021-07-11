@@ -1,17 +1,9 @@
-import {
-  Row,
-  Col,
-  Container,
-  Header,
-  Footer,
-  ContactForm,
-  Counter,
-} from '../components';
+import { Row, Col, Container, ContactForm, Counter } from '../components';
 
 const Hero = props => {
   const typeclass = `is-${props.type || 'info'}`;
   return (
-    <section className={`hero is-fullheight ${typeclass}`}>
+    <section className={`hero is-halfheight ${typeclass}`}>
       {props.header && <div className="hero-head">{props.header}</div>}
       <div className="hero-body">{props.children}</div>
       <div className="hero-foot">{props.footer}</div>
@@ -34,8 +26,8 @@ egestas elit vel sagittis finibus.`;
 
 export const Home = () => (
   <>
-    <Header />
-    <Hero footer={<Footer />}>
+    <Hero>
+      }>
       <Container>
         <Row cols={8}>
           <Col sizeclassName="is-two-thirds">
@@ -52,3 +44,5 @@ export const Home = () => (
     </Hero>
   </>
 );
+
+export default Home;

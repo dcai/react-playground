@@ -1,16 +1,21 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Container } from './Container';
+import { NavLink } from 'react-router-dom';
 
 const NavbarItem = props => {
   const classes = classNames({
     'navbar-item': true,
-    'is-active': props.active,
   });
   return (
-    <a href={props.href || '/'} className={classes}>
+    <NavLink
+      exact
+      to={props.to || '/'}
+      className={classes}
+      activeClassName="is-active"
+    >
       {props.children}
-    </a>
+    </NavLink>
   );
 };
 
@@ -40,11 +45,11 @@ const NavbarMenu = props => (
   <div className="navbar-menu">
     <div className="navbar-start"></div>
     <div className="navbar-end">
-      <NavbarItem active>Home</NavbarItem>
-      <NavbarItem>Examples</NavbarItem>
+      <NavbarItem to="/">Home</NavbarItem>
+      <NavbarItem to="/about">About</NavbarItem>
       <div className="navbar-item has-dropdown is-hoverable">
         <NavbarLink href="/">Account</NavbarLink>
-        <div className="navbar-dropdown is-dark">
+        <div className="navbar-dropdown">
           <NavbarItem>Dashboard</NavbarItem>
           <NavbarItem>Settings</NavbarItem>
           <hr className="navbar-divider" />
@@ -56,7 +61,7 @@ const NavbarMenu = props => (
 );
 
 export const Navbar = () => (
-  <nav className="navbar is-info">
+  <nav className="navbar">
     <Container>
       <NavbarBrand href="/" />
       <NavbarMenu />

@@ -3,18 +3,16 @@ import ReactDOM from 'react-dom';
 import 'bulma/css/bulma.min.css';
 import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
-import { Home } from './pages/Home';
+import { App } from './App';
 import { store } from './redux/store';
-
-let App = document.getElementById('root');
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Home />
+      <App />
     </Provider>
   </React.StrictMode>,
-  App,
+  document.getElementById('root'),
 );
 
 reportWebVitals();
